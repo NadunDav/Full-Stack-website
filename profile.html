@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <!-- THIS Page is mostly run with Js and Backend properties so be careful with the codings -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icon/Nadun Icon.png">
+    <title>2025 AI Dashboard System</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <!-- Linking AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Linking Fontawesome Icons -->
+    <link rel="stylesheet" href="./fontawesome-free-7.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./Lato,Merriweather_Sans,Miniver/Lato/Lato-Italic.ttf">
+    
+</head>
+<body>
+
+    <!-- Notification Container -->
+    <div id="notification"></div>
+
+    <!-- Navbar -->
+    <nav class="nav">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+        <div class="navs">
+            <ul class="list-items">
+                <i><a href="index.html">Home</a></i>
+                <i><a href="#">About</a></i>
+                <i><a href="#">Our Websites</a></i>
+                <i><a href="#">Contact Us</a></i>
+                <i><a href="#"><div id="userAvatar1" class="avatar">?</div></a></a></i>
+            </ul>
+        </div>
+    </nav>
+    <div class="cen1">
+        <!-- SIGNUP -->
+        <div id="signupBox" class="card">
+            <h2>Create Account</h2>
+            <input type="text" id="regUser" placeholder="Username">
+            <input type="password" id="regPass" placeholder="Password">
+            <button class="main-btn" onclick="handleRegister()">Register</button>
+            <span class="link" onclick="showForm('loginBox')">Already have an account? Login</span>
+        </div>
+    </div>
+    <div class="cen1">
+        <!-- LOGIN -->
+        <div id="loginBox" class="card hidden">
+            <h2>Login</h2>
+            <input type="text" id="logUser" placeholder="Username">
+            <input type="password" id="logPass" placeholder="Password">
+            <button class="main-btn" onclick="handleLogin()">Login</button>
+            <span class="link" onclick="showForm('signupBox')">New user? Sign Up</span>
+        </div>
+    </div>
+    <div class="cen1">
+        <!-- DASHBOARD -->
+        <div id="dashboardBox" class="card hidden">
+            <div id="userAvatar" class="avatar">?</div>
+            <h2>Hi, <span id="userNameDisplay"></span>!</h2>
+            
+            <div class="ai-box">
+                <small style="color: #7952b3; font-weight: bold;">AI INSIGHT 2025</small>
+                <p id="aiQuote" style="font-size: 0.85rem; margin: 5px 0 0 0;">Analyzing your dashboard...</p>
+            </div>
+
+            <button onclick="handleLogout()" style="margin-top:20px; background:none; border:none; color:var(--accent-color); cursor:pointer;">Logout</button>
+        </div>
+    </div>
+    <!-- AOS Js -->
+    <!-- Linking Script Files  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: false,
+        });
+    </script>
+
+    <script src="./assets/Js/script.js"></script>
+</body>
+</html>

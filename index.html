@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="home">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icon/Nadun Icon.png">
+    <title>2025 AI Dashboard System - Home</title>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <!-- Linking AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Linking Fontawesome Icons -->
+    <link rel="stylesheet" href="./fontawesome-free-7.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./Lato,Merriweather_Sans,Miniver/Lato/Lato-Italic.ttf">
+</head>
+<body>
+
+    <!-- Notification Container -->
+    <div id="notification"></div>
+
+    <!-- Navbar (or) Navigation menu -->
+    <nav class="nav">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+        <div class="navs">
+            <ul class="list-items">
+                <i class="active1"><a href="#">Home</a></i>
+                <i><a href="#">About</a></i>
+                <i><a href="#">Our Websites</a></i>
+                <i><a href="#">Contact Us</a></i>
+                <i><a href="profile.html"><div id="userAvatar1" class="avatar">?</div></a></i>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+        <!-- Header section -->
+        <header class="header">
+            <div class="left-side">
+                <div class="top">
+
+                </div>
+                <div class="bottom">
+
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+
+                </div>
+            </div>
+        </header>
+    </main>
+    <!-- AOS Js -->
+    <!-- Linking Script Files  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: false,
+        });
+    </script>
+
+    <script src="./assets/Js/script.js"></script>
+    <script>
+        // This script updates the user avatar in the navbar for index.html
+        // Check if user is logged in from localStorage and display accordingly
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeUser = localStorage.getItem('activeUser');
+            if (activeUser) {
+                // Update the avatar with the user's initial
+                const avatar = document.getElementById('userAvatar1');
+                if (avatar) {
+                    avatar.innerText = activeUser.charAt(0).toUpperCase();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
